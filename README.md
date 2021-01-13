@@ -34,5 +34,5 @@ With the VM running, run:
 ## Troubleshooting
 
 * **`error: preallocating file of 54420 bytes: No space left on device`**
-  Your VM's disk is built just "to fit", and your config change made it run out of space.
-  Delete and rebuild using your new config: `rm vm1.qcow2 && ./build-vm.sh`.
+  Your VM's disk is too small.
+  Increase the `diskSize` in `default.nix`, delete the VM state delete and rebuild using: `rm vm1.qcow2 && ./build-vm.sh`.
