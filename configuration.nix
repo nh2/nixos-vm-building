@@ -37,4 +37,20 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "20.09"; # Did you read the comment?
+
+  services.nomad = {
+
+    enable = true;
+    settings = {
+      server = {
+        enabled = true;
+        bootstrap_expect = 1; # for demo; no fault tolerance
+      };
+      client = {
+        enabled = true;
+        network_speed = 1000; # Mbit/s
+      };
+    };
+  };
+
 }
