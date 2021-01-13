@@ -34,7 +34,7 @@ SSH_OPTIONS="-p 2221 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 PROFILE="/nix/var/nix/profiles/system"
 
 # Build the VM system
-outPath="$(nix-build --no-out-link -A vmSystem --arg configuration ./configuration.nix)"
+outPath="$(nix-build --no-out-link vm.nix -A vmSystem --arg configuration ./configuration.nix)"
 
 # Upload to the VM with `nix-copy-closure`.
 NIX_SSHOPTS="$SSH_OPTIONS" nix-copy-closure --to "root@localhost" --gzip "$outPath"

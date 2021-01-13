@@ -24,7 +24,7 @@ echo
 echo "You can change that to point to the nixpkgs you want to use."
 echo
 
-NIX_PATH="$NIX_PATH" nix-build default.nix -A vm --arg configuration ./configuration.nix
+NIX_PATH="$NIX_PATH" nix-build vm.nix -A vm --arg configuration ./configuration.nix
 
 # The above invocation creates a `./result` symlink in the current directory,
 # which links the VM's content and startup script.
@@ -36,4 +36,4 @@ NIX_PATH="$NIX_PATH" nix-build default.nix -A vm --arg configuration ./configura
 # the above could alternatively be done with `nixos-rebuild build-vm` using:
 #     NIX_PATH="$NIX_PATH" NIXOS_CONFIG="$PWD/configuration.nix" nixos-rebuild build-vm
 # but that is not as good because it does not allow us to override VM-specific
-# options like `diskSize` in `default.nix`.
+# options like `diskSize` in `vm.nix`.

@@ -1,7 +1,5 @@
-# This file, `default.nix`, is used when you invoke `nix-build` without giving
-# a file to it explicitly.
-#
-# You can use it e.g. to store attributes to request from the command line.
+# In this file we define VM-related attributes that we can conveniently
+# build with the nix CLI.
 #
 # For example, we define `vmSystem` below, so that we can build it with
 # `nix-build -A vmSystem`.

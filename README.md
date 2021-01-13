@@ -35,4 +35,4 @@ With the VM running, run:
 
 * **`error: preallocating file of 54420 bytes: No space left on device`**
   Your VM's disk is too small.
-  Increase the `diskSize` in `default.nix`, delete the VM state delete and rebuild using: `rm vm1.qcow2 && ./build-vm.sh`.
+  Increase the `diskSize` in `vm.nix`, delete the VM state delete and rebuild using: `rm vm1.qcow2 && ./build-vm.sh`.
